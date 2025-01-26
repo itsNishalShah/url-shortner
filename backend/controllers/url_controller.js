@@ -3,7 +3,7 @@ const { FREE_URL , PREMIUM_URL } = require('../models/url_model')
 const handleShortUrlCreation = async(req,res,next) => {
     const { url } = req.body
     const shortId = nanoid()
-    const shortUrl = `http://localhost:4005/${shortId}`
+    const shortUrl = `http://localhost:4005/url/${shortId}`
     const result = await FREE_URL.create({
         shortUrl: shortUrl,
         redirectUrl: url
@@ -14,7 +14,7 @@ const handleShortUrlCreation = async(req,res,next) => {
 
 const handleShortUrlRedirection = async(req,res,next) => {
     const shortId = req.params.shortId
-    const shortUrl = `http://localhost:4005/${shortId}`
+    const shortUrl = `http://localhost:4005/url/${shortId}`
     const result = await FREE_URL.findOne({
         shortUrl: shortUrl
     })
