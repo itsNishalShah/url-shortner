@@ -2,7 +2,7 @@ const { nanoid } = require('nanoid')
 const { FREE_URL , PREMIUM_URL } = require('../models/url_model')
 const handleShortUrlCreation = async(req,res,next) => {
     const { url } = req.body
-    const shortId = nanoid()
+    const shortId = nanoid(5)
     const shortUrl = `http://localhost:4005/url/${shortId}`
     const result = await FREE_URL.create({
         shortUrl: shortUrl,

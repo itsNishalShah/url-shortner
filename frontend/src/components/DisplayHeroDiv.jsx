@@ -4,7 +4,7 @@ export const DisplayHeroDiv = () => {
     const [ divState , setDivState ] = useState(false)
     const [ shortUrlState , setShortUrlState ] = useState('')
     const typeWriterRef = useRef(null);
-
+    
     useEffect(() => {
         const app = typeWriterRef.current;
         const typewriter = new Typewriter(app, {
@@ -72,3 +72,5 @@ const getLink = async() => {
         </div>
     );
 }
+
+
